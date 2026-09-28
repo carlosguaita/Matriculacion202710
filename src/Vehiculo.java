@@ -7,6 +7,7 @@ public class Vehiculo {
     String marca;
     double cilindraje;
     String combustible;
+    String modelo;
 
 
     public double torque(){

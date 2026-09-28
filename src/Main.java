@@ -5,10 +5,10 @@ class Main{
 
         SistemaCLI sis = new SistemaCLI();
         Vehiculo v1 = sis.crearVehiculo();
-        double tor = v1.torque();
+        sis.imprimirTorque(v1);
 
-        System.out.println("El vehiculo con placas: " + v1.placa + " de marca " + v1.marca);
-        System.out.println("tiene un torque de: " + tor + " Nm.");
+        Vehiculo v2 = sis.crearVehiculo();
+        sis.imprimirTorque(v2);
 
 
     }

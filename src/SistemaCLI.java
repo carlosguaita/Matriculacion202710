@@ -14,33 +14,46 @@ public class SistemaCLI {
         Vehiculo v1 = new Vehiculo();
         System.out.println("Ingrese los datos del vehiculo: ");
         System.out.print("Placa: ");
-        v1.placa = sc.next();
+        String placa = sc.next();
+        v1.setPlaca(placa);
         System.out.print("Color: ");
-        v1.color = sc.next();
+        v1.setColor(sc.next());
         System.out.print("Kilometraje: ");
-        v1.kilometraje = sc.nextInt();
+        v1.setKilometraje(sc.nextInt());
         System.out.print("Tipo: ");
-        v1.tipo = sc.next();
+        v1.setTipo(sc.next());
         System.out.print("Marca: ");
-        v1.marca = sc.next();
+        v1.setMarca(sc.next());
         System.out.print("Modelo: ");
         try {
-            v1.modelo = br.readLine();
+            v1.setModelo(br.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.print("Cilindraje: ");
-        v1.cilindraje = sc.nextDouble();
+        v1.setCilindraje(sc.nextDouble());
         System.out.print("Combustible 1.Gasolina/2.Diesel: ");
         int aux = sc.nextInt();
-        v1.combustible = aux == 1 ? "Gasolina" : "Diesel";
+        v1.setCombustible(aux == 1 ? "Gasolina" : "Diesel");
+        System.out.print("Año compra: ");
+        v1.setAnioCompra(sc.nextInt());
+        System.out.print("Precio compra: ");
+        v1.setPrecio(sc.nextDouble());
         return v1;
     }
 
     public void imprimirTorque(Vehiculo v){
         double tr = v.torque();
-        System.out.println("El torque del vehiculo con placas: " + v.placa + " es: " + tr + " Nm.");
+        System.out.println("El torque del vehiculo con placas: " + v.getPlaca() + " es: " + tr + " Nm.");
     }
+
+    public void imprimirPrecioActual(Vehiculo v){
+        double pr = v.precioActual(2026);
+        System.out.println("El precio actual del vehículo es: USD " + pr);
+    }
+
+
+
 
 
 }

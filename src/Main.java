@@ -4,11 +4,10 @@ class Main{
     public static void main() {
 
         SistemaCLI sis = new SistemaCLI();
-        Vehiculo v1 = sis.crearVehiculo();
-        sis.imprimirTorque(v1);
 
         Vehiculo v2 = sis.crearVehiculo();
         sis.imprimirTorque(v2);
+        sis.imprimirPrecioActual(v2);
 
 
     }

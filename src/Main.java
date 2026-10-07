@@ -5,9 +5,12 @@ class Main{
 
         SistemaCLI sis = new SistemaCLI();
 
-        Vehiculo v2 = sis.crearVehiculo();
-        sis.imprimirTorque(v2);
-        sis.imprimirPrecioActual(v2);
+        Vehiculo vehiculo = sis.crearVehiculo();
+        sis.imprimirTorque(vehiculo);
+        sis.imprimirPrecioActual(vehiculo);
+
+        Duenio duenio = sis.crearDuenio();
+        vehiculo.setDuenio(duenio);
 
 
     }

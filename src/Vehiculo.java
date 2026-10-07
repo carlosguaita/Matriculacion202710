@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Vehiculo {
 
     private String placa;
@@ -10,7 +12,24 @@ public class Vehiculo {
     private String modelo;
     private int anioCompra;
     private double precio;
+    private Duenio duenio;
 
+
+    public Vehiculo(String placa, String color, int kilometraje, String tipo, String marca, double cilindraje, String combustible, String modelo, int anioCompra, double precio) {
+        this.placa = placa;
+        this.color = color;
+        this.kilometraje = kilometraje;
+        this.tipo = tipo;
+        this.marca = marca;
+        this.cilindraje = cilindraje;
+        this.combustible = combustible;
+        this.modelo = modelo;
+        this.anioCompra = anioCompra;
+        this.precio = precio;
+    }
+
+    public Vehiculo() {
+    }
 
     public double torque(){
         double t = 0;
@@ -29,6 +48,21 @@ public class Vehiculo {
         return precio;
     }
 
+    public double precioActual(){
+        LocalDate fechaActual = LocalDate.now();
+        int anios = fechaActual.getYear() - anioCompra;
+        double dev = anios * 1500;
+        double precio = this.precio - dev;
+        return precio;
+    }
+
+    public Duenio getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(Duenio duenio) {
+        this.duenio = duenio;
+    }
 
     public String getPlaca() {
         return placa;

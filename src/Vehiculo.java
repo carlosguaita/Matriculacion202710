@@ -64,6 +64,12 @@ public class Vehiculo {
         this.duenio = duenio;
     }
 
+    @Override
+    public String toString(){
+        return "Placa: " + placa + " Marca: " + marca + " Modelo: " + modelo;
+    }
+
+
     public String getPlaca() {
         return placa;
     }
